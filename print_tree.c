@@ -168,15 +168,15 @@ static int print_label( node *v )
  */
 static void set_last_bar( int *bars, int mode )
 {
-    int  i;
     if ( bars != NULL )
     {
-        i = 0;
+        int  i = 0;
         while ( bars[i]!= 0 )
             i++;
+
+        if ( i > 0 )
+            bars[i-1] |= mode;
     }
-    if ( i > 0 )
-        bars[i-1] |= mode;
 }
 /**
  * Print a tree out left to right by preorder traversal
